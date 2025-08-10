@@ -16,6 +16,8 @@ function configureTreeSitter()
             "go",
             "javascript",
             "typescript",
+            "bash",
+            "regex",
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -65,4 +67,21 @@ return {
         config = configureTreeSitter,
     },
     { 'nvim-treesitter/playground' },
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        opts = {},
+        --config = function() require("nvim-surround").setup() end
+    },
+    {
+        'm-demare/hlargs.nvim',
+        enabled = false,
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+    { 'numToStr/Comment.nvim' },
 }
