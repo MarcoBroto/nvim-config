@@ -50,7 +50,7 @@ local hyperThemeConfig = {
             --    key = 'b',
             --},
         },
-        footer = {'ESKETIIIIT!!!!'}
+        footer = {'ESKETIIIIT!!!!'},
     },
 }
 
@@ -79,7 +79,7 @@ local doomThemeConfig = {
                 action = 'lua print(3)'
             },
         },
-        footer = {}
+        footer = {},
     }
 }
 
@@ -129,12 +129,12 @@ return {
     {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
-        config = function() require('dashboard').setup(DASHBOARD_CONFIG) end,
+        opts = DASHBOARD_CONFIG,
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
     {
         'petertriho/nvim-scrollbar',
-        config = function() require('scrollbar').setup() end,
+        opts = {},
     },
     {
         "folke/zen-mode.nvim",
