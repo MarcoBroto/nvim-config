@@ -5,30 +5,28 @@ return {
         keys = {
             { "<leader>fc", "<CMD>Telescope commander<CR>", mode = "n" },
         },
-        config = function ()
-            require("commander").setup({
-                components = {
-                    "DESC",
-                    "KEYS",
-                    "CAT",
+        opts = {
+            components = {
+                "DESC",
+                "KEYS",
+                "CAT",
+            },
+            sort_by = {
+                "DESC",
+                "KEYS",
+                "CAT",
+                "CMD"
+            },
+            integration = {
+                telescope = {
+                    enable = true,
                 },
-                sort_by = {
-                    "DESC",
-                    "KEYS",
-                    "CAT",
-                    "CMD"
-                },
-                integration = {
-                    telescope = {
-                        enable = true,
-                    },
-                    lazy = {
-                        enable = true,
-                        set_plugin_name_as_cat = true
-                    }
+                lazy = {
+                    enable = true,
+                    set_plugin_name_as_cat = true
                 }
-            })
-        end,
+            }
+        },
     },
     {
         "folke/which-key.nvim",
@@ -48,7 +46,9 @@ return {
             "kylechui/nvim-surround",
             "folke/which-key.nvim",
         },
-        config = function() require("surround-ui").setup({ root_key = "S" }) end,
+        opts = {
+            root_key = "S",
+        },
         enabled = false,
     },
 }
